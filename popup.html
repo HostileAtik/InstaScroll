@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InstaScroll</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3L12 21"/>
+            <path d="M5 14l7 7 7-7"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="title">InstaScroll</h1>
+          <p class="subtitle">Reels Doomscroller</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Big Doomscroll Button -->
+    <button class="doomscroll-btn" id="doomscroll-btn">
+      <div class="doomscroll-btn-bg"></div>
+      <div class="doomscroll-btn-content">
+        <svg class="doomscroll-icon" id="icon-start" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+          <path d="M12 3L12 21M12 21L5 14M12 21L19 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <svg class="doomscroll-icon" id="icon-stop" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" style="display:none">
+          <rect x="6" y="6" width="12" height="12" rx="2"/>
+        </svg>
+        <span class="doomscroll-text" id="doomscroll-text">DOOMSCROLL</span>
+      </div>
+    </button>
+
+    <!-- Status -->
+    <div class="status-card" id="status-card">
+      <div class="status-row">
+        <span class="status-dot" id="status-dot"></span>
+        <span class="status-text" id="status-text">Ready to doomscroll</span>
+      </div>
+      <div class="reel-counter" id="reel-counter" style="display:none">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <path d="M8 2v20M16 2v20M2 12h20"/>
+        </svg>
+        <span id="reel-count-value">0 reels watched</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Delay Control -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Delay Between Reels</span>
+        <span class="delay-value" id="delay-display">3s</span>
+      </div>
+      <input type="range" id="delay-slider" class="speed-slider" min="0" max="15" step="1" value="3">
+      <div class="delay-labels">
+        <span>Instant</span>
+        <span>15s</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Quick Actions -->
+    <div class="section">
+      <button class="skip-btn" id="skip-btn" disabled>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+        </svg>
+        Skip This Reel
+      </button>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Shortcuts -->
+    <div class="section shortcuts">
+      <span class="section-title">Shortcuts</span>
+      <div class="shortcut-grid">
+        <div class="shortcut"><kbd>Space</kbd><span>Toggle</span></div>
+        <div class="shortcut"><kbd>→</kbd><span>Skip reel</span></div>
+        <div class="shortcut"><kbd>Esc</kbd><span>Stop</span></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <span>InstaScroll v1.0</span>
+    </footer>
+
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
